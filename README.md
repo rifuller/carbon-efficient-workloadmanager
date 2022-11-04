@@ -110,6 +110,15 @@ func azure functionapp publish <FunctionAppName>
 ## Database Migrations
 Entity Framework is used. See the EF documentation for initialising or migrating a database if required.
 
+## Solution Architecture
+
+Below are some diagrams that were produced early on and are out of date but should still give you a clear idea of how this can be used.
+
+![Solution Diagram](https://github.com/rifuller/carbon-efficient-workloadmanager/blob/main/docs/Solution%20Architecture.png?raw=true)
+
+![Database Schema](https://github.com/rifuller/carbon-efficient-workloadmanager/blob/main/docs/Database.png?raw=true)
+
+
 ## FAQ
 
 > System.Private.CoreLib: Exception while executing function: Functions.RouteJob. System.Private.CoreLib: Result: Failure
