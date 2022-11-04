@@ -1,0 +1,5 @@
+{
+  "CarbonAwareWebApiClient": {
+    "BaseUri": "https://<insert published hostname here>.azurewebsites.net"
+  }
+}

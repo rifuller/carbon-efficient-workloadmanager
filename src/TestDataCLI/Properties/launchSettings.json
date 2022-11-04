@@ -1,0 +1,24 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "create [simple10]": {
+      "commandName": "Project",
+      "commandLineArgs": "create\r\n-count 10\r\n-out testdata.simple10.csv"
+    },
+    "eval [simple10]": {
+      "commandName": "Project",
+      "commandLineArgs": "evaluate\r\n-in testdata.simple10.csv\r\n-out testdata.simple10.eval.csv"
+    },
+    "create [10000]": {
+      "commandName": "Project",
+      "commandLineArgs": "create\r\n-count 10000\r\n-out testdata.simple10000.csv"
+    },
+    "eval [10000]": {
+      "commandName": "Project",
+      "commandLineArgs": "evaluate\r\n-in testdata.simple10000.csv\r\n-out testdata.simple10000.eval.csv"
+    }
+  }
+}

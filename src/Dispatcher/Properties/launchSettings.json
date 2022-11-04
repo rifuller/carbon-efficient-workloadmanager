@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "DispatcherFunctions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7220",
+      "environmentVariables": {
+        "ENVIRONMENT": "Development"
+      }
+    },
+    "TestData": {
+      "commandName": "Project",
+      "commandLineArgs": "-Count 10"
+    }
+  }
+}

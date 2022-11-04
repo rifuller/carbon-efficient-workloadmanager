@@ -1,0 +1,17 @@
+# .NET Code analysers (if I didn't want them to be run locally): https://learn.microsoft.com/en-us/dotnet/devops/dotnet-github-action-reference#net-code-analysis
+
+name: CI Build
+run-name: ci-build-@${{ github.actor }}-${{ github.ref_name }}-${{ github.run_number }}
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6'
+        dotnet-quality: 'signed'
+    - run: dotnet build ./src/Dispatcher/Dispatcher.csproj # -warnaserror
+
+

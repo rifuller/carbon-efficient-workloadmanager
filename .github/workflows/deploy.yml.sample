@@ -1,0 +1,26 @@
+# Docs: https://github.com/Azure/actions-workflow-samples
+
+name: Deploy to Azure
+run-name: deploy-@${{ github.actor }}-${{ github.ref_name }}-${{ github.run_number }}
+on: [push]
+env:
+  AZURE_FUNCTIONAPP_NAME: 'dispatcher-prod-gv5yccnxnro56'
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6'
+        dotnet-quality: 'signed'
+    - run: dotnet build --configuration Release --output ./output ./src/Dispatcher/Dispatcher.csproj # -warnaserror
+    - name: 'Run Azure Functions Action'
+      uses: Azure/functions-action@v1
+      id: fa
+      with:
+        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+        package: './output'
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+
